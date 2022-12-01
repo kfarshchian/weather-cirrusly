@@ -10,8 +10,10 @@ var unhideDiv =  document.getElementById("icons");
 var unhideDiv1 =  document.getElementById("icons1");
 var unhideDiv2 =  document.getElementById("icons2");
 var unhideDiv3 =  document.getElementById("icons3");
-var unhideDiv4 =  document.getElementById("icons4");weatherImg
+var unhideDiv4 =  document.getElementById("icons4");
+var unhideDiv5 =  document.getElementById("icons5");
 var hideDiv =  document.getElementById("weatherImg");
+
 
 var timeDisplayEl = $('#time-display');
 
@@ -59,24 +61,35 @@ function getApi() {
       })
       .then(function (data) {
         console.log(data);
-        for(i = 3; i < 30; i+=8){
+        for(i = 3; i < 36; i+=8){
           document.getElementById("temp" +(i+1)).innerHTML ="temp: " +data['list'][i]['main']['temp'];
          }
-         for(i = 3; i < 30; i+=8){
-          document.getElementById("day" +(i+1)).innerHTML ="Date: " +data['list'][i]['dt_txt'].split(' ')[0];
+         for(i = 3; i < 36; i+=8){
+          document.getElementById("day" +(i+1)).innerHTML ="Date: " +dayjs(data['list'][i]['dt_txt']).format('M/D/YYYY');
          }
-         for(i = 3; i < 30; i+=8){
+         for(i = 3; i < 36; i+=8){
           document.getElementById("wind" +(i+1)).innerHTML ="wind: " +data['list'][i]['wind']['speed'] + " MPH";
          }
-         for(i = 3; i < 30; i+=8){
+         for(i = 3; i < 36; i+=8){
           document.getElementById("humidity" +(i+1)).innerHTML ="Humidity: " +data['list'][i]['main']['humidity']+ " %";
          }
-         for(i = 3; i < 30; i+=8){
+         for(i = 3; i < 36; i+=8){
           document.getElementById("img" +(i+1)).src ="http://openweathermap.org/img/wn/" + data['list'][i]['weather'][0]['icon']+".png";
          }
     
         var nameValue = data['city']['name'];
         nameEl.innerHTML = nameValue;
+        
+        localStorage.setItem('cityName', nameValue);
+  
+        //button.addEventListener('click', () => {
+          var city = localStorage.getItem('cityName')
+          console.log(city);
+          document.getElementById('insertCity').innerHTML =`<button value='${city}'>${city}</button>`;
+      
+        //});
+      
+      
 
 
       });
@@ -90,8 +103,19 @@ function getApi() {
     unhideDiv2.classList.remove('hide');
     unhideDiv3.classList.remove('hide');
     unhideDiv4.classList.remove('hide');
+    unhideDiv5.classList.remove('hide');
     hideDiv.classList.add('hide');
   
   }
   
     button.addEventListener('click', removeHide);
+
+  
+
+
+
+
+
+// THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+// WHEN I click on a city in the search history
+// THEN I am again presented with current and future conditions for that city
