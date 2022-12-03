@@ -28,8 +28,29 @@ header{
 .hide{
     display: none;
 }
+.btn{
+    padding: 5px;
+    margin: 5px;
+}
+ul{
+    list-style-type: number;
+    position: relative;
+    border: 2px solid black;
+    text-align: center;
+    top: 5px;
+    right: 28px;
+    margin: 28px;
+    background-color: #19c3fb;
+}
+li{
+    position: relative;
+    right: 15px;
+}
 h4 img{
     height: 520px;
     padding-left: 10px;
     padding-top: 5px;
 }
+button[value="undefined"] {display: none;}​
+
+

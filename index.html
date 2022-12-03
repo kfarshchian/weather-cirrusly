@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- link sheets and bootstrap -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,19 +13,21 @@
 </head>
 
 <body>
+  <!-- Add the header -->
   <header>
     <h1>Weather Cirrusly 5 Day Weather Report</h1>
   </header>
-    
+    <!-- Add the search area and the history box-->
     <div class="row">
       <div class="col-md-auto" id="inputcity">
         <h2>Search for a City</h2>
-        <input type="text" placeholder="City Name" id="inputValue">
+        <input type="text" placeholder="City Name" id="textboxSearch">
         <input type="submit" value="submit" id="button">
-        <div id="insertCity">
-          
+        <div >
+          <ul id="searchHistory"></ul>
         </div>
       </div>
+      <!--current weather div -->
       <div id="display" class="col">
         <div  id="weatherImg" class="currentsection icons col-md-auto">
           <h4><img src="./assets/weather.png" alt=""></h4>
@@ -40,14 +42,16 @@
             <p id="currentWind"></p>
             <p id="currentHumidity"></p>
           </div>
+          <!--day 1 weather -->
           <div class="dayssection row" id="lowerweather">
               <div id="icons1" class="hide icons col-md-auto ">
                 <p id="day4"></p>
-                <p id="desc4"><img drc="dots.png" class="imageclass" id="img4" alt=""></p>
+                <p id="desc4"><img class="imageclass" id="img4" alt=""></p>
                 <p id="temp4"></p>
                 <p id="wind4"></p>
                 <p id="humidity4"></p>
               </div>
+              <!--day 2 weather -->
               <div id="icons2" class="hide icons col-md-auto ">
                 <p id="day12"></p>
                 <p id="desc12"><img drc="dots.png" class="imageclass" id="img12" alt=""></p>
@@ -55,6 +59,7 @@
                 <p id="wind12"></p>
                 <p id="humidity12"></p>
               </div>
+              <!--day 3 weather -->
               <div id="icons3" class="hide icons col-md-auto">
                 <p id="day20"></p>
                 <p id="desc20"><img drc="dots.png" class="imageclass" id="img20" alt=""></p>
@@ -62,6 +67,7 @@
                 <p id="wind20"></p>
                 <p id="humidity20"></p>
               </div>
+              <!--day 4 weather -->
             <div id="icons4" class="hide icons col-md-auto">
               <p id="day28"></p>
               <p id="desc28"><img drc="dots.png" class="imageclass" id="img28" alt=""></p>
@@ -69,6 +75,7 @@
               <p id="wind28"></p>
               <p id="humidity28"></p>
             </div> 
+            <!-- day 4 weather-->
             <div id="icons5" class="hide icons col-md-auto">
               <p id="day36"></p>
               <p id="desc36"><img drc="dots.png" class="imageclass" id="img36" alt=""></p>
@@ -80,8 +87,8 @@
         </div>
     </div>
      
-
-
+<!-- link jsday, script, and jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
